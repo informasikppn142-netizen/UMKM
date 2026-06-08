@@ -1,53 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aplikasi Arsip Elektronik</title>
-  <link rel="icon" href="https://id.wikipedia.org/wiki/Kementerian_Keuangan_Republik_Indonesia#/media/Berkas:Seal_of_the_Ministry_of_Finance_of_the_Republic_of_Indonesia.svg" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #eee;
-      overflow: hidden; /* Mencegah scroll ganda */
-    }
-
-    .iframe-container {
-      width: 100%;
-      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
-      overflow: hidden;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <title>TOKO</title>
 </head>
 <body>
-  <div class="iframe-container">
-    <iframe
-      id="app"
-      const urlWebApp="https://script.google.com/macros/s/AKfycbxRPn-P9xwuzto86gFGBqHAW-oeQkE3H1TguVsTQjscMjDBgV8_NR_oc3xCM_k2WZfnpg/exec"
-      fetch(urlWebApp)
-  .then(response => response.json())
-  .then(data => {
-    console.log("Data dari Google Script:", data);
-  })
-  .catch(error => {
-    console.error("Script menolak/Error:", error);
-  });
-      scrolling="yes"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allow="fullscreen; camera; microphone; display-capture; geolocation;">
-    </iframe>
-  </div>
+
+    <h1>Menghubungkan GitHub ke Google Script</h1>
+
+    <script>
+        // 1. Buat fungsi untuk menerima data dari Google Script
+        function tampilkanData(data) {
+            console.log("Data berhasil diterima dari Google Script:", data);
+            alert("Koneksi Sukses! Nama Aplikasi: " + data.nama);
+        }
+    </script>
+
+    <script src="https://script.google.com/macros/s/AKfycbzr1WXtpz136j0ZlBHe8t79jX68TFk9KF47fhEtW0iS2vNe_9CyX16GpnyF8nbrbBp1LA/exec?callback=tampilkanData"></script>
+
 </body>
 </html>
