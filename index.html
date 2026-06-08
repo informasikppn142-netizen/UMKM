@@ -33,7 +33,15 @@
   <div class="iframe-container">
     <iframe
       id="app"
-      src="https://script.google.com/macros/s/AKfycbxRPn-P9xwuzto86gFGBqHAW-oeQkE3H1TguVsTQjscMjDBgV8_NR_oc3xCM_k2WZfnpg/exec"
+      const urlWebApp="https://script.google.com/macros/s/AKfycbxRPn-P9xwuzto86gFGBqHAW-oeQkE3H1TguVsTQjscMjDBgV8_NR_oc3xCM_k2WZfnpg/exec"
+      fetch(urlWebApp)
+  .then(response => response.json())
+  .then(data => {
+    console.log("Data dari Google Script:", data);
+  })
+  .catch(error => {
+    console.error("Script menolak/Error:", error);
+  });
       scrolling="yes"
       allowfullscreen="true"
       webkitallowfullscreen="true"
